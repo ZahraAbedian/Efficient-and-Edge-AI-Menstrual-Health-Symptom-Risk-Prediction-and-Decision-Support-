@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=64.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "edge-ai-menstrual-health"
+version = "0.1.0"
+description = "Edge AI deployment pipeline for menstrual symptom risk prediction"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=1.5",
+    "numpy>=1.24",
+    "scikit-learn>=1.2",
+    "joblib>=1.2",
+    "shap>=0.42",
+    "psutil>=5.9",
+    "onnxruntime>=1.15",
+    "skl2onnx>=1.15",
+    "gradio>=4.0",
+    "plotly>=5.15",
+]
+
+[project.scripts]
+edge-dashboard = "edge_ai.dashboard.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
